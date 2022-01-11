@@ -1,15 +1,28 @@
 import Link from 'next/link'
+import Router,{ useRouter } from 'next/router'
+import { useEffect } from 'react'
+import styled, { css } from 'styled-components'
 import Layout from '../components/Layout'
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+const IndexPage = () => {
+  const router = useRouter();
+
+  useEffect(function(){
+    setTimeout(function(){
+      router.push('/home');
+    },1000)
+  },[])
+
+
+  return(
+    <Layout>
+      메인
+    </Layout>
+  ) 
+}
+  
+    
+  
+
 
 export default IndexPage

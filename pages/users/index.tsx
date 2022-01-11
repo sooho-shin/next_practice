@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 
@@ -10,11 +11,15 @@ type Props = {
   items: User[]
 }
 
-const WithStaticProps = ({ items }: Props) => (
-  <Layout title="Users List | Next.js + TypeScript Example">
+const WithStaticProps = ({ items }: Props) => {
+  // const [userState,setUserState] = useState<User[]>(sampleUserData);
+
+
+  return (
+    <>
     <h1>Users List</h1>
     <p>
-      Example fetching data from inside <code>getStaticProps()</code>.
+      Example fetching data from insides <code>getStaticProps()</code>.
     </p>
     <p>You are currently on: /users</p>
     <List items={items} />
@@ -23,8 +28,9 @@ const WithStaticProps = ({ items }: Props) => (
         <a>Go home</a>
       </Link>
     </p>
-  </Layout>
-)
+  </>
+  )
+}
 
 export const getStaticProps: GetStaticProps = async () => {
   // Example for including static props in a Next.js function component page.
