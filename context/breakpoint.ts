@@ -1,5 +1,5 @@
-import {createBreakpoint, createMap} from 'styled-components-breakpoint';
- 
+import { createBreakpoint, createMap } from "styled-components-breakpoint";
+
 const breakpoints = {
   xs: 0,
   sm: 576,
@@ -7,7 +7,7 @@ const breakpoints = {
   lg: 992,
   xl: 1200,
 };
- 
+
 const map = createMap(breakpoints);
 
-export {breakpoints,map}
+export { breakpoints, map };
